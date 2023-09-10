@@ -3,7 +3,9 @@ import { minimizeWindow, toggleAlwaysOnTop, toggleFullScreen } from '../actions/
 import { zoomIn, zoomOut } from '../../windows/utils'
 import { isOsx } from '../../config'
 
-export default function (keybindings) {
+export default function (keybindings, userPreference) {
+  const { alwaysOnTopByDefault } = userPreference.getAll()
+
   const menu = {
     label: '&Window',
     role: 'window',
@@ -17,6 +19,7 @@ export default function (keybindings) {
       id: 'alwaysOnTopMenuItem',
       label: 'Always on Top',
       type: 'checkbox',
+      checked: alwaysOnTopByDefault,
       accelerator: keybindings.getAccelerator('window.toggle-always-on-top'),
       click (menuItem, browserWindow) {
         toggleAlwaysOnTop(browserWindow)

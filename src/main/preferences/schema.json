@@ -35,6 +35,11 @@
     "maximum": 2.0,
     "default": 1.0
   },
+  "alwaysOnTopByDefault": {
+    "description": "General--Always on top by default.",
+    "type": "boolean",
+    "default": false
+  },
   "hideScrollbar": {
     "description": "General--Whether to hide scrollbars.",
     "type": "boolean",

@@ -57,6 +57,11 @@
           :options="zoomOptions"
           :onChange="value => onSelectChange('zoom', value)"
         ></cur-select>
+        <bool
+          description="Always on Top by default"
+          :bool="alwaysOnTopByDefault"
+          :onChange="value => onSelectChange('alwaysOnTopByDefault', value)"
+        ></bool>
       </template>
     </compound>
 

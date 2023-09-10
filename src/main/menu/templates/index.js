@@ -32,13 +32,15 @@ export const configSettingMenu = (keybindings) => {
  * @param {string[]} recentlyUsedFiles The recently used files.
  */
 export default function (keybindings, preferences, recentlyUsedFiles) {
+  console.log(preferences.getAll())
+
   return [
     ...(process.platform === 'darwin' ? [marktext(keybindings)] : []),
     file(keybindings, preferences, recentlyUsedFiles),
     edit(keybindings),
     paragraph(keybindings),
     format(keybindings),
-    window(keybindings),
+    window(keybindings, preferences),
     theme(preferences),
     view(keybindings),
     help()
